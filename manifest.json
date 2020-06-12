@@ -1,0 +1,22 @@
+{
+    "name": "TimeBox",
+    "manifest_version": 2,
+    "version": "0.1",
+    "description": "Control your time!",
+    "permissions": ["alarms", "notifications", "storage"],
+    "background": {
+        "scripts": ["./js/background.js"],
+        "persistent": true
+    },
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "32": "timebox_logo32.png",
+            "128": "timebox_logo128.png"
+        }
+    },
+    "icons": {
+        "32": "timebox_logo32.png",
+        "128": "timebox_logo128.png"
+    }
+}
