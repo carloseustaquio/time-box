@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
     <div id="main-header">
@@ -12,9 +12,11 @@
       <!-- page 1 -->
       <div class="page pageListTimeBoxes">
         <button value="2" id="newBtn">New +</button>
-        <div id="alarmCount"></div>
-        <button id="clear" type="button">Clear TimeBoxes</button>
-        <button id="getAll" type="button">Get All TimeBoxes</button>
+
+        <ul id="timBoxUl"></ul>
+
+        <!-- <button id="clear" type="button">Clear TimeBoxes</button> -->
+        <!-- <button id="getAll" type="button">Get All TimeBoxes</button> -->
       </div>
       <!-- page 2 -->
       <div class="page pageNewTimeBox">
@@ -24,22 +26,22 @@
         </header>
         <form id="newTimeBox">
           <input
-          name="label"
-          type="text"
-          placeholder="BoxLabel"
-          autocomplete="off"
+            name="label"
+            type="text"
+            placeholder="BoxLabel"
+            autocomplete="off"
           />
           <input
-          name="duration"
-          type="number"
-          step="0.01"
-          placeholder="Duration"
-          autocomplete="off"
+            name="duration"
+            type="number"
+            step="0.01"
+            placeholder="Duration"
+            autocomplete="off"
           />
           <button type="submit">Set</button>
         </form>
       </div>
     </div>
-    <script src="./js/popup.js"></script>
+    <script type="module" src="./js/popup.js"></script>
   </body>
 </html>

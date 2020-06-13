@@ -1,59 +1,37 @@
-'use strict';
+"use strict";
+import TimeBox from "./models/TimeBox.js";
+import handlePage from "./helpers/handlePage.js";
 
-function setAlarm(minutes, id) {
-  chrome.alarms.create(`alarm.${id}`, { delayInMinutes: minutes })
-}
+/** Handle form submition for new TimeBox */
+document.querySelector("#newTimeBox").addEventListener("submit", (event) => {
+  event.preventDefault();
+  const timeBox = new TimeBox(
+    event.target[0].value,
+    parseFloat(event.target[1].value)
+  );
+  timeBox.createTimeBox();
+});
 
-function saveNewAlarm(event) {
-  event.preventDefault()
+/** Handle List TimeBoxes on page load */
+window.addEventListener("load", (event) => {
+  TimeBox.listTimeBoxes();
+});
 
-  const newAlarm = {
-    id: parseInt(Math.random() * 1000),
-    label: event.target[0].value,
-    time: parseFloat(event.target[1].value),
+/** Handle page transitions */
+document.querySelector("#newBtn").addEventListener("click", handlePage);
+document.querySelector("#prevBtn").addEventListener("click", handlePage);
+
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+  if (request.msg === "list_timeboxes") {
+    TimeBox.listTimeBoxes();
   }
+});
 
-  chrome.storage.sync.get("alarms", function({ alarms }) {
-    console.log(alarms)
-    if (alarms) {
-      chrome.storage.sync.set({ 
-        alarms: [...alarms, newAlarm]
-      })
-    } else {
-      chrome.storage.sync.set({ 
-        alarms: [ newAlarm ] 
-      })
-    }
-  })
-  
-  setAlarm(newAlarm.time, newAlarm.id)
-}
+// document.querySelector("#getAll").addEventListener("click", async (event) => {
+//   const timeBoxes = await TimeBox.getAllTimeBoxes();
+//   console.log(timeBoxes);
+// });
 
-function changePage(event) {
-  const pageNumber = parseInt(event.target.value)
-  const container = document.querySelector(".container")
-  container.style.left = `${(pageNumber - 1) * - 350}px`
-}
-
-function clearAlarms(event) {
-  event.preventDefault()
-  chrome.storage.sync.remove("alarms", function() {
-    console.log("cleared!")
-    chrome.storage.sync.get("alarms", function({ alarms }) {
-      console.log("alarms: ", alarms)
-    })
-  })
-}
-
-function getAllAlarms(event) {
-  event.preventDefault()
-  chrome.storage.sync.get("alarms", function({ alarms }) {
-    console.log("alarms: ", alarms)
-  })
-}
-
-document.querySelector("#newTimeBox").addEventListener('submit', saveNewAlarm)
-document.querySelector("#newBtn").addEventListener('click', changePage)
-document.querySelector("#prevBtn").addEventListener('click', changePage)
-document.querySelector("#clear").addEventListener('click', clearAlarms)
-document.querySelector("#getAll").addEventListener('click', getAllAlarms)
+// document.querySelector("#clear").addEventListener("click", async (event) => {
+//   await TimeBox.clearTimeBoxes();
+// });
