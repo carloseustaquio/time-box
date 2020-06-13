@@ -1,0 +1,19 @@
+#main-header {
+  height: 80px;
+  display: flex;
+  background-color: #fff;
+}
+
+#main-header img {
+  margin: 20px auto auto auto;
+  z-index: 2;
+}
+
+#polygon {
+  top: 60px;
+  position: absolute;
+  width: 100%;
+  border-bottom: 20px solid #ddd;
+  border-right: 350px solid transparent;
+  z-index: 0;
+}

@@ -1,0 +1,23 @@
+.pageNewTimeBox {
+}
+
+.pageNewTimeBox header {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.pageNewTimeBox header h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+form#newTimeBox {
+  display: flex;
+  flex-flow: column;
+}
+
+form * {
+  margin: 5px 0;
+}

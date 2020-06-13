@@ -74,23 +74,34 @@ export default class TimeBox {
   static listTimeBoxes = async () => {
     const alarms = await this.getAllTimeBoxes();
     const list = document.querySelector("#timBoxUl");
-    console.log("list: ", list);
-    console.log(alarms);
+
     if (!alarms || !alarms.length) {
       list.innerHTML = "";
-      list.appendChild(document.createTextNode("No TimeBoxes created"));
+      list.insertAdjacentHTML(
+        "afterbegin",
+        `<span id="noTimeBoxesAlert">No TimeBoxes yet!</span>`
+      );
     } else {
       list.innerHTML = "";
       alarms.forEach((alarm) => {
         /** Create item */
         const item = document.createElement("li");
-        item.appendChild(
-          document.createTextNode(alarm.label + " " + alarm.time)
+        item.insertAdjacentHTML(
+          "afterbegin",
+          `
+            <div class="alarmData">
+              <span class="label">${alarm.label}</span>
+              <span class="time">${alarm.time} min</span>
+            </div>
+          `
         );
         /** Create delete button for item */
         const deleteButton = document.createElement("button");
-        deleteButton.appendChild(document.createTextNode("X"));
-        // deleteButton.value = alarm.id;
+        deleteButton.insertAdjacentHTML(
+          "afterbegin",
+          `<span class="material-icons">clear</span>`
+        );
+        deleteButton.classList = "deleteButton";
         deleteButton.onclick = (event) => this.deleteTimeBox(alarm.id);
         item.appendChild(deleteButton);
         /** Append item to list */

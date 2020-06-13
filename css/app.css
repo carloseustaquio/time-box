@@ -1,0 +1,46 @@
+html,
+body {
+  width: 350px;
+  height: 390px;
+  position: relative;
+  background-color: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.bodyContainer {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  overflow: hidden;
+  background: #ddd;
+}
+
+.container {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: calc(100% - 80px);
+  transition: left 0.4s ease-in-out;
+}
+
+.page {
+  min-width: 100%;
+  height: 100%;
+}
+
+.justify_self_center {
+  justify-self: center;
+}
+.align_self_center {
+  align-self: center;
+}

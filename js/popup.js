@@ -1,6 +1,7 @@
 "use strict";
 import TimeBox from "./models/TimeBox.js";
 import handlePage from "./helpers/handlePage.js";
+import startTime from "./helpers/clock.js";
 
 /** Handle form submition for new TimeBox */
 document.querySelector("#newTimeBox").addEventListener("submit", (event) => {
@@ -15,6 +16,7 @@ document.querySelector("#newTimeBox").addEventListener("submit", (event) => {
 /** Handle List TimeBoxes on page load */
 window.addEventListener("load", (event) => {
   TimeBox.listTimeBoxes();
+  startTime();
 });
 
 /** Handle page transitions */
