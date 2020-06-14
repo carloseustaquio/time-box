@@ -11,9 +11,9 @@ document
     const formData = new FormData(event.target);
     const label = formData.get("label");
     const hour = parseInt(formData.get("hour") || 0);
-    const minutes = parseInt(formData.get("minutes" || 0));
+    const minutes = parseInt(formData.get("minutes") || 0);
     const timeBox = new TimeBox(label, parseFloat(hour * 60 + minutes));
-    console.log(timeBox);
+
     await new Promise((resolve, reject) => timeBox.createTimeBox(resolve));
     handlePage(1);
     document.getElementById("newTimeBox").reset();
