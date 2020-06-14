@@ -4,7 +4,7 @@
 ![Home Screen](./demo/Screenshot_3.png)
 
 ## About ❔
-TimeBox is a Google Chrome Extention that provides an easy and elegant way of managing your time while woking or studying online. There are no annoying noises or beeps, just simple native notifications and straightforward alert messages.
+TimeBox is a Google Chrome Extension that provides an easy and elegant way of managing your time while working or studying online. There are no annoying noises or beeps, just simple native notifications and straightforward alert messages.
 
 ## Technologies ⌨️
 Constructed with plain HTML, CSS and JavaScript.
