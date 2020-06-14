@@ -37,6 +37,11 @@ document
     handlePage(parseInt(event.target.value))
   );
 
+/** Handle info button transition and onclick */
+document.querySelector(".infoBox").addEventListener("click", (event) => {
+  window.open("https://github.com/carloseustaquio/time-box", "_blank");
+});
+
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   if (request.msg === "list_timeboxes") {
     TimeBox.listTimeBoxes();

@@ -1,0 +1,39 @@
+.infoBox {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  /* background: #fff; */
+  height: 18px;
+  width: 18px;
+  padding: 1.8px;
+  overflow: hidden;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex-flow: row-reverse;
+  transition: all 0.2s ease-in-out;
+}
+
+.infoBox:hover {
+  background: #eee;
+  width: 68px;
+}
+
+.infoBox:active,
+.infoBox:focus {
+  background: #ddd;
+}
+
+.infoBox .material-icons {
+  font-size: 0.9rem;
+}
+
+.infoBox > span:nth-child(2) {
+  color: #333;
+  margin-right: 8px;
+}
+
+.infoBox > span:nth-child(2) {
+  font-size: 0.6rem;
+}
