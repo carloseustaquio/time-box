@@ -23,3 +23,5 @@ Here are some goals that may help with the future development of this work.
 - [ ] Translate to other languages
 - [ ] Design improvements
 - [ ] Create TimeBox website
+
+🎨 [Figma Layout](https://www.figma.com/file/3XLgVa0tiGCmMNUH86uFEL/TimeBox?node-id=0%3A1)
