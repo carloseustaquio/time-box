@@ -1,4 +1,4 @@
-# 📦 TimeBox
+# TimeBox 📦
 ### Control your time ⏰
 
 ![Home Screen](./demo/Screenshot_3.png)
