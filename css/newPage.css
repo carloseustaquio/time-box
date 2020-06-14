@@ -68,6 +68,7 @@ form#newTimeBox .inputControl {
 }
 
 form#newTimeBox .inputControl .inputWrapper {
+  position: relative;
   background: #fff;
   padding: 8px 15px;
   border-radius: 4px;

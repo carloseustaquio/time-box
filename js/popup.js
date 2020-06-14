@@ -8,15 +8,25 @@ document
   .querySelector("#newTimeBox")
   .addEventListener("submit", async (event) => {
     event.preventDefault();
+    const timeErrorMessage = document.querySelector("#timeErrorMessage");
     const formData = new FormData(event.target);
     const label = formData.get("label");
     const hour = parseInt(formData.get("hour") || 0);
     const minutes = parseInt(formData.get("minutes") || 0);
-    const timeBox = new TimeBox(label, parseFloat(hour * 60 + minutes));
 
-    await new Promise((resolve, reject) => timeBox.createTimeBox(resolve));
-    handlePage(1);
-    document.getElementById("newTimeBox").reset();
+    if (hour === 0 && minutes === 0) {
+      /** Check if time is selected */
+      timeErrorMessage.appendChild(document.createTextNode("Select the time"));
+    } else {
+      const timeBox = new TimeBox(label, parseFloat(hour * 60 + minutes));
+      await new Promise((resolve, reject) => timeBox.createTimeBox(resolve));
+      handlePage(1);
+      document.getElementById("newTimeBox").reset();
+
+      if (timeErrorMessage.childNodes[0]) {
+        timeErrorMessage.removeChild(timeErrorMessage.childNodes[0]);
+      }
+    }
   });
 
 /** Handle List TimeBoxes on page load */

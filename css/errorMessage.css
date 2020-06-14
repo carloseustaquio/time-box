@@ -1,0 +1,10 @@
+.errorMessage {
+  font-size: 0.7rem;
+  color: rgb(214, 42, 42);
+}
+
+.errorMessage#timeErrorMessage {
+  position: absolute;
+  bottom: -16px;
+  left: 2px;
+}
