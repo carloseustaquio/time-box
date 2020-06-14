@@ -5,7 +5,7 @@ export default class TimeBox {
   }
 
   /** Creates a new alarm and saves its data to the chrome storage */
-  createTimeBox = () => {
+  createTimeBox = (callback) => {
     const newAlarm = {
       id: parseInt(Math.random() * 1000),
       label: this.label,
@@ -30,6 +30,8 @@ export default class TimeBox {
         delayInMinutes: newAlarm.time,
       });
     });
+
+    callback();
   };
 
   /** Helper method to delete all TimeBoxes */
@@ -89,6 +91,7 @@ export default class TimeBox {
         item.insertAdjacentHTML(
           "afterbegin",
           `
+            <span class="material-icons alarmIcon">alarm</span>
             <div class="alarmData">
               <span class="label">${alarm.label}</span>
               <span class="time">${alarm.time} min</span>

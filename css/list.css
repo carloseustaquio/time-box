@@ -11,22 +11,30 @@ ul#timBoxUl #noTimeBoxesAlert {
 ul#timBoxUl li {
   font-size: 1rem;
   height: 32px;
-  padding: 0 5px 0 10px;
+  padding: 0 5px 0 5px;
   display: grid;
-  grid-template-columns: auto min-content;
-  column-gap: 12px;
+  grid-template-columns: min-content auto min-content;
+  column-gap: 10px;
   align-items: center;
   border-bottom: 1px solid #aaa;
+}
+
+ul#timBoxUl li .alarmIcon {
+  font-size: 0.9rem;
+  color: #aaa;
 }
 
 ul#timBoxUl li .alarmData {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
+  font-size: 1rem;
 }
 
 ul#timBoxUl li .alarmData .label {
+}
+ul#timBoxUl li .alarmData .label::first-letter {
+  text-transform: uppercase;
 }
 
 ul#timBoxUl li .alarmData .time {
@@ -56,5 +64,5 @@ ul#timBoxUl li .deleteButton:active {
 }
 
 ul#timBoxUl li .deleteButton .material-icons {
-  font-size: 16px;
+  font-size: 1rem;
 }

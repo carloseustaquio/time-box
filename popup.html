@@ -38,24 +38,54 @@
         <!-- page 2 -->
         <div class="page pageNewTimeBox">
           <header>
-            <button value="1" id="prevBtn">Back</button>
+            <button value="1" id="backButton">
+              <span class="material-icons">arrow_back</span>
+            </button>
             <h2>New TimeBox</h2>
           </header>
           <form id="newTimeBox">
-            <input
-              name="label"
-              type="text"
-              placeholder="BoxLabel"
-              autocomplete="off"
-            />
-            <input
-              name="duration"
-              type="number"
-              step="0.01"
-              placeholder="Duration"
-              autocomplete="off"
-            />
-            <button type="submit">Set</button>
+            <div class="inputControl">
+              <label for="label">Label:</label>
+              <div class="inputWrapper">
+                <input
+                  name="label"
+                  type="text"
+                  placeholder="BoxLabel"
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+
+            <div class="timeAndConfirm">
+              <div class="inputControl">
+                <label for="timeout">Time:</label>
+                <div class="inputWrapper time">
+                  <div>
+                    <input
+                      name="hour"
+                      type="number"
+                      placeholder="00"
+                      autocomplete="off"
+                    />
+                    <span>h</span>
+                  </div>
+                  <div class="vl"></div>
+                  <div>
+                    <input
+                      name="minutes"
+                      type="number"
+                      placeholder="00"
+                      autocomplete="off"
+                    />
+                    <span>m</span>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" id="newBtn" class="btn primary-btn">
+                Set
+                <span class="material-icons btn-icon green">check</span>
+              </button>
+            </div>
           </form>
         </div>
       </div>

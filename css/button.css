@@ -24,7 +24,8 @@
   color: #fff;
 }
 
-.primary-btn:hover {
+.primary-btn:hover,
+.primary-btn:focus {
   background: #444;
   transform: scale(0.98);
 }

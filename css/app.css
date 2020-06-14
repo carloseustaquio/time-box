@@ -44,3 +44,18 @@ body {
 .align_self_center {
   align-self: center;
 }
+
+.green {
+  color: #00ff00;
+}
+
+/* Reset input[type="number"] styles */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
