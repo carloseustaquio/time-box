@@ -3,6 +3,10 @@
 
 ![Home Screen](./demo/Screenshot_3.png)
 
+> "An example worth more than a thousand words" 👀
+
+https://chrome.google.com/webstore/detail/timebox/nmcgbcjnmnjoadhbhcfanegjcidkglgm?h1=pt
+
 ## About ❔
 TimeBox is a Google Chrome Extension that provides an easy and elegant way of managing your time while working or studying online. There are no annoying noises or beeps, just simple native notifications and straightforward alert messages.
 
